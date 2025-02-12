@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const userRouter = require('./router/users')
+const productRouter = require('./router/products')
+const orderRouter = require('./router/orders')
 const port = 3000
 const connectDB = require('./config/database')
 
@@ -12,6 +14,8 @@ app.get('/', (req, res) => {
 })
 
 app.use(userRouter)
+app.use(productRouter)
+app.use(orderRouter)
 
 connectDB()
 
